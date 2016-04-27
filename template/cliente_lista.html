@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Clientes{% endblock %}
+
+
+{% block head %}
+
+{{ parent() }}
+
+{% endblock %}
+
+{% block content %}
+
+    <h2 class="sub-header">Clientes Cadastrados no Sistema</h2>
+    <div class="">
+   
+        <nav>
+    
+
+ 
+</nav>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th style="">Nome</th>
+                <th style="">CPF</th>
+                <th style="">Telefone</th>
+                <th style="">Data de Nascimento</th>
+                <th>Ação </th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for linha in linhas %}
+            <tr style="max-width: 90% !important;">
+                <td style="overflow: hidden">{{ linha.nome }}</td>
+                <td style="max-width:20px; overflow: hidden; text-align: center;">{{ linha.cpf }} </td>
+                <td style="max-width:50%; overflow: hidden;">  {{ linha.telefoneResidencial}}</td>
+                <td style="overflow: hidden">{{ linha.dataNascimento}}</td>
+                <td>
+                    <a class="bt glyphicon glyphicon-search" style="margin:5px" href="index.php?class=cliente&render=visualizar&id={{ linha.id }}">Visualizar</a>
+                    <a class="bt glyphicon glyphicon-trash" style="margin:5px" href="index.php?class=cliente&action=apagar&id={{ linha.id }}">Apagar</a>
+            </tr>
+            {% endfor %}
+
+                      </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
