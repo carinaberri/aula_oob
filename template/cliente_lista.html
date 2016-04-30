@@ -22,6 +22,7 @@
         <table class="table table-striped">
             <thead>
             <tr>
+                <th style="">ID <a href="?order=desc" alt="Ördernar de forma descendente">  <span class="glyphicon glyphicon-chevron-down"></span></a> <a href="?order=asc" alt="Ördernar de forma descendente"><span class="glyphicon glyphicon-chevron-up"></span> </a></th>
                 <th style="">Nome</th>
                 <th style="">CPF</th>
                 <th style="">Telefone</th>
@@ -32,6 +33,7 @@
             <tbody>
             {% for linha in linhas %}
             <tr style="max-width: 90% !important;">
+                <td style="overflow: hidden">{{ linha.id }}</td>
                 <td style="overflow: hidden">{{ linha.nome }}</td>
                 <td style="max-width:20px; overflow: hidden; text-align: center;">{{ linha.cpf }} </td>
                 <td style="max-width:50%; overflow: hidden;">  {{ linha.telefoneResidencial}}</td>
